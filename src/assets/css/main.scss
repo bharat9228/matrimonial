@@ -1,0 +1,750 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
+
+@import "variable.scss";
+@mixin FlexBox($BoxFlow:row,$JustifyBox:space-between) {
+    display: flex;
+    flex-direction: $BoxFlow;
+    justify-content: $JustifyBox;
+}
+@mixin space {
+    padding: 60px 80px;
+}
+@mixin Button($btnColor:transparent){
+    padding: 4px;
+    border: 2px solid $btnColor;
+    background: none;
+    cursor: pointer;
+}
+img,svg{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    border-style: none;
+}
+body{
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+.nav-main{
+    @include FlexBox();
+}
+.nav-logo{
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.nav-header{
+    @include FlexBox();
+    padding-right: 10px;
+    align-items: center;
+}
+.nav-header a{
+    text-decoration: none;
+    color: inherit;
+}
+.nav-header ul{
+    @include FlexBox();
+}
+.nav-header li{
+    list-style: none;
+    padding-right: 10px;
+    color: white;
+    padding-left: 38px;
+    font-size: $font-16;
+    font-weight: $Regular;
+}
+.nav-header button{
+    @include Button();
+    margin-left: 20px;
+    background: #ff607bf5;
+    border-radius: 10px;
+    color: white;
+    font-size: $font-16;
+    font-weight: $Regular;
+    padding: 10px 30px;
+}
+.container{
+    @include FlexBox($BoxFlow:column);
+    background-image: url('../images/nav-bg.png');
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: cover;
+    padding-bottom: 80px;
+}
+.container-box{
+    @include FlexBox();
+    padding-top: 40px;
+}
+.container-title{
+    @include FlexBox($BoxFlow:column,$JustifyBox:normal);   
+    padding-top: 20px;
+    margin-left: 60px;
+}
+.container-title p{
+    margin: 10px 0px;
+    font-size: $font-38;
+    font-weight: $SemiBold;
+    word-spacing: 6px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+.container-box img{
+    width: 500px;
+    height: 500px;
+}
+.find-someone-btn{
+    @include FlexBox($JustifyBox:normal);
+    align-items: center;
+    @include Button();
+    background: white;
+    width: fit-content;
+    padding: 0px 20px;
+    padding-right: 10px;
+    color: #F78770;
+    font-size: $font-18;
+    font-weight: $SemiBold;
+    border-radius: 14px;
+    margin-top: 70px;
+    cursor: pointer;
+    border: 2.5px solid rgba(247, 135, 112, 0.96);
+}
+.find-someone-btn img{
+    margin-left: 14px;
+    width: 40px;
+    height: 60px;
+}
+.filter-category-box{
+    @include FlexBox($BoxFlow:column);
+    background: white;
+    width: 80%;
+    padding: 0px 40px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: -40px !important;
+    margin: 0 auto;
+}
+.filter-category-item{
+    padding-top: 20px;
+    @include FlexBox($JustifyBox:space-between);
+}
+.filter-category-box button{
+    @include Button();
+    border-radius: 12px;
+    padding: 14px 60px;
+    font-size: $font-18;
+    font-weight: $Medium;
+    margin-top: 40px;
+    background: rgba(255, 96, 123, 0.96);;
+    color: white;
+    align-self: center;
+}
+select {
+    appearance: none;
+    outline: 0;
+    font-size: $font-14;
+    font-weight: $Medium;
+    width: fit-content;
+    min-width: 221px;
+    max-width: fit-content;
+    color: black;
+    height: 44px;
+    padding: 5px 8px;
+    border: 1px solid #FF607B;
+    border-radius: 12px;
+    cursor: pointer;
+    padding-left: 14px;
+    padding-right: 30px;
+}
+.select {
+    position: relative;
+    display: block;
+    width: fit-content;
+    min-width: 221px;
+    max-width: fit-content;
+    line-height: 3;
+    overflow: hidden;
+    border-radius: .25em;
+}
+.select::after {
+    content: "";
+    background: url(../images/down_Arrow.png);
+    background-size: 100% 100%;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    bottom: 0;
+    padding: 0 1em;
+    pointer-events: none;
+    width: 2px;
+    font-size: 10px;
+    height: 28px;
+}
+.follow-steps-box{
+    @include FlexBox();
+    @include space();
+    padding-top: 100px;
+}
+.follow-steps{
+    @include FlexBox($BoxFlow:column,$JustifyBox:normal);
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border: 1px solid #FF607B;
+    border-radius: 250px;
+    background: white;
+}
+.follow-steps p{
+    margin: 0px;
+    text-align: center;
+}
+.follow-steps-no{
+    @include FlexBox($JustifyBox:center);
+    align-self: flex-end;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: white;
+    position: absolute;
+    left: 36%;
+    bottom: -20px;
+    font-size: $font-48;
+    font-weight: $Medium;
+    font-family: 'Lexend Tera', sans-serif;
+}
+.follow-steps-no2{
+    @include FlexBox($JustifyBox:center);
+    align-self: flex-end;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: white;
+    color:#FF607B;
+    position: absolute;
+    left: 36%;
+    top: -40px;
+    font-size: $font-48;
+    font-weight: $Medium;
+    font-family: 'Londrina Shadow';
+}
+.follow-steps img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.follow-steps-title{
+    color: #FF607B;
+    font-size: $font-24;
+    font-weight: $Medium;
+}
+.follow-steps-detail{
+    font-size: $font-16;
+    font-weight: $Light;
+    color: #000000B5;
+    padding-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.client-stories-box{
+    @include FlexBox($BoxFlow:column);
+    @include space();
+    align-items: center;
+    margin-bottom: 80px;
+}
+.client-stories-title{
+    font-size: $font-36;
+    color: #000000B0;
+    font-family: 'Playfair Display', serif;
+    font-weight: $Regular;
+    margin-bottom: 12px;
+}
+.client-stories-detail{
+    padding: 0px 200px;
+    text-align: center;
+    line-height: 42px;
+}
+.stories-container{
+    @include FlexBox();
+}
+.stories-left-container{
+    @include FlexBox($JustifyBox:center);
+    align-items: center;
+    width: 44%;
+}
+.stories-left-container img{
+    border: 1.5px solid black;
+    width: 80%;
+}
+.stories-right-container{
+    @include FlexBox($BoxFlow:column,$JustifyBox:normal);
+    width: 48%;
+    align-items: flex-start;
+    font-family: 'Playfair Display', serif;    
+    position: relative;
+}
+.stories-right-container p{
+    margin: 0px;
+    padding-top: 40px;
+    font-size: $font-24;
+    font-weight: $SemiBold;
+    color: #000000;
+}
+.stories-right-container :nth-child(3){
+    font-size: $font-18;
+    font-family: 'Poppins', sans-serif;
+    font-weight: $Regular;
+}
+.stories-right-container :nth-child(4){
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    font-size: $font-16;
+    font-weight: $Regular;
+    line-height: 40px
+}
+.stories-right-container button{
+    @include Button();
+    font-size: $font-20;
+    color: white;
+    padding: 20px 40px;
+    background: #FF607B;
+    border-radius: 12px;
+    margin-top: 60px;
+}
+.stories-line{
+    @include FlexBox($BoxFlow:column,$JustifyBox:normal);
+    align-items: center;
+    position: absolute;
+    left: 46%;
+}
+.stories-line-img-2{
+    width: fit-content;
+    height: 20px;
+}
+.stories-line :nth-child(1){
+    margin-bottom: -4px;
+}
+.stories-line-img-3{
+    width: 12px;
+    height: 12px;
+}
+.stories-line div{
+    border-left: 2px solid #000000;
+    height: 560px;
+}
+.why-us-box{
+    @include FlexBox($BoxFlow:column);
+    margin-top: 100px;
+}
+.why-us-title{
+    font-family: 'Playfair Display', serif;   
+    font-size: $font-36;   
+    font-weight: $SemiBold;
+    text-align: center;
+    color: #000000;
+}
+.why-us-box span{
+    color: #FF607B;
+}
+.why-us-img-container{
+    @include FlexBox($JustifyBox:center);
+    align-items: center;
+    width: 44%;
+    padding-top: 7%;
+    background-image: url(../images/path1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    padding-bottom: 40px;
+}
+.why-us-img-container img{
+    border: 2px solid #000000;
+    border-radius: 440px;
+    padding: 6.5px;
+    background: white;
+    width: 66%;
+}
+.why-us-info-cntr{
+    @include FlexBox($JustifyBox:normal);
+    margin: 40px;
+}
+.why-us-detail-cntr{
+    width: 45%;
+    padding: 40px;
+    padding-left: 60px;
+    @include FlexBox($BoxFlow:column,$JustifyBox:normal);   
+}
+.why-us-detail-cntr p{
+    font-size: $font-16;
+    font-family: 'Poppins', sans-serif;
+    font-weight: $Regular;
+    line-height: 40px;
+}
+.why-us-detail-img-cntr{
+    margin-top: 80px;
+    @include FlexBox();
+}
+.why-us-detail-img-cntr img{
+    width: fit-content;
+}
+.why-us-detail-img-cntr2{
+    margin-top: -60px;
+}
+.about-us-cntr{
+    @include FlexBox();
+    align-items: center;
+    padding: 40px;
+}
+.about-us-left-cntr{
+    width: 60%;
+}
+.about-us-right-cntr{
+    width: 38%;
+}
+.about-us-right-cntr p{
+    font-family: 'Poppins', sans-serif;
+    font-size: $font-16;
+    font-weight: $Regular;
+    line-height: 40px;
+}
+.about-us-cntr button{
+    @include Button();
+    font-size: $font-20;
+    color: white;
+    padding: 20px 40px;
+    background: #FF607B;
+    border-radius: 12px;
+    margin-top: 60px;
+}
+.client-stories-cntr{
+    @include FlexBox();
+    width: 100%;
+    margin-top: 40px;
+}
+.client-stories-left-cntr{
+    width: 48%;
+    margin-left: 20px;
+}
+.client-stories-left-cntr img{
+    width: 80%;
+}
+.client-stories-right-cntr{
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    width: 50%;
+}
+.client-stories-right-cntr p{
+    margin: 0px 30px;
+}
+.client-stories-details :nth-child(1){
+    font-family: 'Playfair Display';
+    font-weight: $SemiBold;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: $font-24;
+    line-height: 42px;
+    color: #000000;
+}
+.client-stories-details :nth-child(2){
+    font-family: 'Poppins';
+    font-weight: $Regular;
+    font-size: $font-24;
+    line-height: 42px;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.47);
+}
+.client-stories-details :nth-child(3){
+    font-family: 'Poppins';
+    font-weight: $Regular;
+    font-size: $font-16;
+    color: rgba(0, 0, 0, 0.72);
+    line-height: 40px;
+}
+.client-list-cntr{
+    @include FlexBox($BoxFlow:column);
+    align-content: center;
+    align-self: center;
+    margin-bottom: 20px;
+}
+.client-list-scroll{
+    @include FlexBox($BoxFlow:column);
+    align-items: center;
+}
+.client-list-cntr img{
+    width: 34px;
+    height: 34px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+}
+.client-list-scroll :nth-child(1){
+    @include Button();
+    background-image: url('../images/UpArrow.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 40px;
+    width: 40px;
+    background-position: center;
+    background-size: contain;
+}
+.client-list-scroll :nth-child(3){
+    @include Button();
+    background-image: url('../images/DownArrow.png');
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    background-position: center;
+    background-size: contain;
+}
+.client-list-scroll p{
+    font-family: 'Poppins';
+    font-weight: $Regular;
+    font-size: $font-16;
+    width: fit-content;
+    padding: 10px 0px;
+    margin: 0px;
+    color: rgba(0, 0, 0, 0.99);
+    transform: matrix(-0.01, -1, 1, -0.02, 0, 0);
+}
+.footer-cntr{
+    background-image: url('../images/path2.png');
+    background-size: 100% 100%;
+    padding: 20px 40px;
+    padding-top: 60px;
+}
+.footer-cntr table{
+    width: 100%;
+}
+.footer-cntr table tbody{
+    @include FlexBox();
+    width: 100%;
+}
+.footer-social-img{
+    @include FlexBox($JustifyBox:normal);
+    cursor: pointer;
+    margin-left: -10px;
+}
+.footer-links p{
+    font-family: 'Poppins';
+    font-weight: $SemiBold;
+    font-size: $font-20;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+.footer-detail{
+    @include FlexBox($BoxFlow:column);
+}
+.footer-detail p{
+    font-family: 'Poppins';
+    font-weight: $Regular;
+    font-size: $font-16;
+    line-height: 35px;
+    width: 344px;
+    color: #FFFFFF;
+}
+.footer-detail-logo{
+    width: 80px;
+}
+
+.footer-links ul{
+    list-style: none;
+    padding-left: 8px;
+}
+
+.footer-links li{
+    margin-top: 15px;
+}
+.footer-links a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins';
+    font-weight: $Regular;
+    font-size: $font-16;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.footer-links a:hover{
+    text-decoration: underline;
+}
+.address-cntr{
+    @include FlexBox();
+    align-items: center;
+}
+.address-cntr p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    margin-left: 14px;
+    margin-bottom: 0px;
+    width: 240px;
+    color: #FFFFFF;
+}
+.address-cntr img{
+    width:34px;
+    height: 34px;
+}
+.login-page-cntr{
+    align-items: flex-start;
+    height: 100vH;
+    @include FlexBox();
+}
+.login-page-form{
+    @include FlexBox($BoxFlow:column);
+    align-items: center;
+}
+.login-left-cntr{
+    width: 40%;
+    padding: 0px 60px;
+    background: #F5F5F5;
+    height: 100%;
+    @include FlexBox($JustifyBox:center);
+    align-items: center;
+}
+.login-left-cntr img{
+    width: 90%;
+    object-fit: contain;
+}
+.login-right-cntr{
+    @include FlexBox($BoxFlow:column,$JustifyBox:normal);
+    align-items: center;
+    top: 0;
+    bottom:0;
+    right: 0;
+    position:fixed;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    width: 50%;
+    padding-top: 20px;
+}
+.login-right-cntr img{
+    width: 100px;
+}
+.login-page-form{
+    width: 70%;
+    margin-top: 26px;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+.login-page-form input{
+    height: 40px;
+    border: none;
+    width: 100%;
+    outline: none;
+    font-family: 'Playfair Display';
+    font-weight: $Regular;
+    letter-spacing: .6px;
+    font-size: $font-16;
+    border-bottom: 1px solid #0000009E;
+    background: transparent;
+    margin-bottom: 30px;
+}
+.login-page-form input::placeholder{
+    color: #0000009E;
+    font-family: 'Playfair Display';
+    font-weight: $Regular;
+    letter-spacing: .6px;
+    font-size: $font-16;
+    line-height: 32px;
+}
+.login-right-cntr p{
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: $SemiBold;
+    font-size: $font-34;
+    margin-top: 0px;
+    line-height: 53px;
+    color: rgba(0, 0, 0, 0.87);
+}
+.login-page-form a{
+    text-decoration: none;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: $font-16;
+    line-height: 32px;
+    align-self: flex-end;
+    color: rgba(0, 0, 0, 0.74);
+}
+.login-page-form button{
+    @include Button();
+    width: fit-content;
+    margin-top: 40px;
+    padding: 0px 60px;
+    color: white;
+    background: rgba(255, 96, 123, 0.96);
+    border-radius: 12px;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: $Bold;
+    font-size: $font-20;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+.other-signin-cntr{
+    @include FlexBox($BoxFlow:column);
+    align-items: center;
+    margin-top: 10px;
+}
+.other-signin-cntr hr{
+    background-color: #00000030;
+    margin: 0px 10px;
+    margin-top: 4px;
+    width: 60px;
+}
+.other-signin-cntr p{
+    @include FlexBox();
+    margin-top: 30px;
+    align-items: center;
+    font-family: 'Playfair Display';
+    font-style: $Regular;
+    font-weight: 500;
+    font-size: $font-16;
+    line-height: 32px;
+    color: #1b1b1b70!important;
+}
+.other-signin-cntr button{
+    @include Button();
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: $SemiBold;
+    font-size: $font-14;
+    background: url('../images/GoogleLogo.png');
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    background-size: contain;
+    color: #000000CF;
+    line-height: 27px;
+}
+.other-signin-cntr p{
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: rgba(0, 0, 0, 0.81);
+}
+.new-register-btn{
+    font-family: 'Playfair Display' !important;
+    font-style: normal !important;
+    font-weight: $SemiBold !important;
+    font-size: $font-16 !important;
+    margin-top: 30px !important;
+    line-height: 27px !important;
+    color: #000000CF;
+    cursor: pointer;
+}
